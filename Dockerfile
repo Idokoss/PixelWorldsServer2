@@ -14,7 +14,4 @@ WORKDIR /app
 # kopiujemy opublikowane pliki
 COPY --from=build /app/publish .
 
-# kopiujemy plik player.dat do /app
-COPY PixelWorldsServer2/PixelWorldsServer2/player.dat ./player.dat
-
 ENTRYPOINT ["dotnet", "PixelWorldsServer2.dll"]
