@@ -5,8 +5,8 @@ WORKDIR /src
 COPY . .
 
 # przywracamy zależności i publikujemy projekt z podfolderu
-RUN dotnet restore PixelWorldsServer2/PixelWorldsServer2.csproj
-RUN dotnet publish PixelWorldsServer2/PixelWorldsServer2.csproj -c Release -o /app/publish
+RUN dotnet restore PixelWorldsServer2.csproj
+RUN dotnet publish PixelWorldsServer2.csproj -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /app
