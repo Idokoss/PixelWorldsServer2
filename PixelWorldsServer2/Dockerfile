@@ -9,4 +9,4 @@ RUN dotnet publish PixelWorldsServer2.csproj -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
 WORKDIR /app
 COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "PixelWorldsServer2.csproj"]
+ENTRYPOINT ["dotnet", "PixelWorldsServer2.dll"]
