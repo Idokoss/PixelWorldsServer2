@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
@@ -39,13 +39,21 @@ namespace PixelWorldsServer2
 
         private static void CheckInput()
         {
-            while (Console.KeyAvailable)
+            try
             {
-                string input = Console.ReadLine();
-                Util.Log("Admin Console > '" + input + "'");
-                HandleConsoleInput(input);
+                while (Console.KeyAvailable)
+                {
+                    string input = Console.ReadLine();
+                    Util.Log("Admin Console > '" + input + "'");
+                    HandleConsoleInput(input);
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                // Brak konsoli lub input przekierowany - ignorujemy
             }
         }
+
         private static void Logger()
         {
             bool hadOutput = false;
