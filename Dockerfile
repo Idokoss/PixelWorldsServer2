@@ -8,6 +8,7 @@ RUN dotnet restore
 
 # Kopiuj resztę plików i zbuduj
 COPY . ./
+COPY player.dat /app/player.dat
 RUN dotnet publish -c Release -o out
 
 # Runtime stage
